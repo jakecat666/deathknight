@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | DeathKnight</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/DKWebGL.json", {onProgress: UnityProgress});
+      console.log("abc1");
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 1920px; height: 1080px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">DeathKnight</div>
+      </div>
+    </div>
+    <script type="module">
+    import { } from "https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"; 
+    import { } from "https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"; 
+  console.log("1");
+  const firebaseConfig = {
+    apiKey: "AIzaSyA1oK-7GOSr_1oXXQ9PBF1_7P9UHGB1KWI",
+    authDomain: "deathknight-5fc47.firebaseapp.com",
+    databaseURL: "https://deathknight-5fc47-default-rtdb.firebaseio.com",
+    projectId: "deathknight-5fc47",
+    storageBucket: "deathknight-5fc47.appspot.com",
+    messagingSenderId: "1076808819919",
+    appId: "1:1076808819919:web:98791739eb223797d5c3ba",
+    measurementId: "G-QDC1444X17"
+  };
+  console.log("2");
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  console.log("3");
+</script>
+  </body>
+</html>
