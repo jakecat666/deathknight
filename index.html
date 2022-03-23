@@ -10,8 +10,7 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/DKWebGL.json", {onProgress: UnityProgress});
-      console.log("abc1");
-    </script>
+      </script>
   </head>
   <body>
     <div class="webgl-content">
@@ -25,7 +24,6 @@
     <script type="module">
     import { } from "https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"; 
     import { } from "https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"; 
-  console.log("1");
   const firebaseConfig = {
     apiKey: "AIzaSyA1oK-7GOSr_1oXXQ9PBF1_7P9UHGB1KWI",
     authDomain: "deathknight-5fc47.firebaseapp.com",
@@ -36,11 +34,17 @@
     appId: "1:1076808819919:web:98791739eb223797d5c3ba",
     measurementId: "G-QDC1444X17"
   };
-  console.log("2");
 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  console.log("3");
+          var audioCtx = new AudioContext();
+          var tryToResumeAudioContext = function() {
+            if (audioCtx.state === 'suspended')
+                audioCtx.resume();
+            else
+                clearInterval(resumeInterval);
+        };
+        var resumeInterval = setInterval(tryToResumeAudioContext, 400);
 </script>
   </body>
 </html>
