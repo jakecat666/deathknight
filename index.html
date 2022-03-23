@@ -9,7 +9,24 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/DKWebGL.json", {onProgress: UnityProgress});
+            var unityInstance = UnityLoader.instantiate("unityContainer", "Build/DKWebGL.json", {onProgress: UnityProgress,
+        Module: {
+          preInit: [function(){
+            this.gameInstance.Module.noInitialRun = true;
+          }],
+          onRuntimeInitialized: function() {
+            const btn = document.createElement('button');
+            btn.classList.add('playButton');
+            btn.textContent = 'PLAY';
+            btn.style.fontSize = '2em';
+            btn.onclick = e => {
+              gameInstance.Module.callMain();
+              btn.remove();
+            };
+            this.gameInstance.container.appendChild(btn);
+          }
+        }
+      });
       </script>
   </head>
   <body>
@@ -37,14 +54,6 @@
 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-          var audioCtx = new AudioContext();
-          var tryToResumeAudioContext = function() {
-            if (audioCtx.state === 'suspended')
-                audioCtx.resume();
-            else
-                clearInterval(resumeInterval);
-        };
-        var resumeInterval = setInterval(tryToResumeAudioContext, 1500);
 </script>
   </body>
 </html>
