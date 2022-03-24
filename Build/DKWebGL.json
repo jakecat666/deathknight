@@ -1,7 +1,7 @@
 {
 "companyName": "Syndicate",
-"productName": "DeathKnight",
-"productVersion": "0.1",
+"productName": "Death Knight",
+"productVersion": "1.0.1",
 "dataUrl": "DKWebGL.data.unityweb",
 "wasmCodeUrl": "DKWebGL.wasm.code.unityweb",
 "wasmFrameworkUrl": "DKWebGL.wasm.framework.unityweb",
